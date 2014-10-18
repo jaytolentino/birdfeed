@@ -549,6 +549,8 @@
     <string name="app_name">Birdfeed</string>
     <string name="hello_world">Hello world!</string>
     <string name="login_label">Log in to Twitter</string>
+    <string name="sample_body">This is a tweet body</string>
+    <string name="sample_username">\@foo</string>
     <string name="title_activity_feed">FeedActivity</string>
     <string name="title_activity_photos">Flickr Photos</string>
     <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/values/styles.xml -->

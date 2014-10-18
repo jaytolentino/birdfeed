@@ -7,5 +7,7 @@
     <string name="title_activity_photos">Flickr Photos</string>
     <string name="login_label">Log in to Twitter</string>
     <string name="title_activity_feed">FeedActivity</string>
+    <string name="sample_username">\@foo</string>
+    <string name="sample_body">This is a tweet body</string>
 
 </resources>
