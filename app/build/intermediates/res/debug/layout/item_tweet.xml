@@ -26,8 +26,21 @@
         android:layout_height="wrap_content"
         android:text="@string/sample_body"
         android:id="@+id/tvBody"
-        android:layout_below="@+id/tvUsername"
         android:layout_toRightOf="@+id/ivProfileImg"
-        android:layout_toEndOf="@+id/ivProfileImg" />
+        android:layout_toEndOf="@+id/ivProfileImg"
+        android:layout_below="@+id/tvUsername"
+        android:layout_alignRight="@+id/tvTimestamp"
+        android:layout_alignEnd="@+id/tvTimestamp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_timestamp"
+        android:id="@+id/tvTimestamp"
+        android:layout_toEndOf="@+id/tvUsername"
+        android:layout_toRightOf="@+id/tvUsername"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
 <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/layout/item_tweet.xml -->

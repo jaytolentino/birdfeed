@@ -9,5 +9,6 @@
     <string name="title_activity_feed">FeedActivity</string>
     <string name="sample_username">\@foo</string>
     <string name="sample_body">This is a tweet body</string>
+    <string name="sample_timestamp">1 hr ago</string>
 
 </resources>

@@ -15,6 +15,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,29 +36,38 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
             holder = new TweetViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.item_tweet, parent, false);
-
-            holder.ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImg);
-            holder.ivProfileImage.setImageResource(android.R.color.transparent);
-            ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), holder.ivProfileImage);
-
-            holder.tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
-            holder.tvBody = (TextView) convertView.findViewById(R.id.tvBody);
-
+            initializeViews(holder, convertView);
             convertView.setTag(holder);
         }
         else {
             holder = (TweetViewHolder) convertView.getTag();
         }
-
-        holder.tvUsername.setText(tweet.getUser().getUsername());
-        holder.tvBody.setText(tweet.getBody());
+        setViewContent(tweet, holder);
         return convertView;
     }
 
+    private void initializeViews(TweetViewHolder holder, View convertView) {
+        holder.ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImg);
+        holder.tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
+        holder.tvBody = (TextView) convertView.findViewById(R.id.tvBody);
+        holder.tvTimestamp = (TextView) convertView.findViewById(R.id.tvTimestamp);
+    }
+
+    private void setViewContent(Tweet tweet, TweetViewHolder holder) {
+        holder.ivProfileImage.setImageResource(android.R.color.transparent);
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), holder.ivProfileImage);
+
+        holder.tvUsername.setText(tweet.getUser().getUsername());
+        holder.tvBody.setText(tweet.getBody());
+
+        holder.tvTimestamp.setText(tweet.getRelativeTimetamp());
+    }
+
     private class TweetViewHolder {
-        ImageView ivProfileImage;
-        TextView tvUsername;
-        TextView tvBody;
+        public ImageView ivProfileImage;
+        public TextView tvUsername;
+        public TextView tvBody;
+        public TextView tvTimestamp;
     }
 }

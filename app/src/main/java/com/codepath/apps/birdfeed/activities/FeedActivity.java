@@ -5,18 +5,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.codepath.apps.birdfeed.R;
+import com.codepath.apps.birdfeed.adapters.EndlessScrollListener;
 import com.codepath.apps.birdfeed.adapters.TweetsAdapter;
 import com.codepath.apps.birdfeed.models.Tweet;
 import com.codepath.apps.birdfeed.networking.TwitterApplication;
 import com.codepath.apps.birdfeed.networking.TwitterClient;
+import com.codepath.apps.birdfeed.utils.ProgressBarHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -25,15 +25,17 @@ public class FeedActivity extends ActionBarActivity {
     private ArrayList<Tweet> tweets;
     private TweetsAdapter aTweets;
     private ListView lvTweets;
+    private String earliestId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ProgressBarHandler.create(this);
         setContentView(R.layout.activity_feed);
         client = TwitterApplication.getRestClient();
-        populateTimeline();
 
         initializeMemberVariables();
+        populateTimeline();
     }
 
     @Override
@@ -56,10 +58,14 @@ public class FeedActivity extends ActionBarActivity {
     }
 
     private void populateTimeline() {
+        ProgressBarHandler.showProgressBar(this);
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray json) {
                 aTweets.addAll(Tweet.fromJSONArray(json));
+                earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getUid());
+                Log.d("debug", "ID: " + earliestId);
+                ProgressBarHandler.hideProgressBar(FeedActivity.this);
             }
 
             @Override
@@ -75,5 +81,28 @@ public class FeedActivity extends ActionBarActivity {
         tweets = new ArrayList<Tweet>();
         aTweets = new TweetsAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
+        setupTweetScroll();
+    }
+
+    // TODO: possible to reduce repeated code here?
+    private void setupTweetScroll() {
+        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                client.getHomeTimeline(earliestId, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(JSONArray json) {
+                        aTweets.addAll(Tweet.fromJSONArray(json));
+                        earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getUid());
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable, String s) {
+                        Log.d("debug", throwable.toString());
+                        Log.d("debug", s);
+                    }
+                });
+            }
+        });
     }
 }

@@ -1,10 +1,14 @@
 package com.codepath.apps.birdfeed.models;
 
+import com.codepath.apps.birdfeed.utils.TimestampParser;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by jay on 10/17/14.
@@ -66,8 +70,8 @@ public class Tweet {
         return tweetId;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public String getRelativeTimetamp() {
+        return TimestampParser.getRelativeTimeAgo(createdAt);
     }
 
     public User getUser() {
