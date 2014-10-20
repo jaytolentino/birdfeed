@@ -2,11 +2,18 @@ Birdfeed
 ========
 A Twitter Client Android App
 
-## Completed User Stories
-__Required:__
+## User Stories
+
+### Completed...
+
 * User can sign in to Twitter using OAuth login
 * User can view the tweets from their home timeline
   * User should be displayed the username, name, and body for each tweet
+
+### To complete...
+
+__Required:__
+* User can view the tweets from their home timeline
   * User should be displayed the relative timestamp for each tweet "8m", "7h"
   * User can view more tweets as they scroll with infinite pagination
   * Optional: Links in tweets are clickable and will launch the web browser (see autolink)

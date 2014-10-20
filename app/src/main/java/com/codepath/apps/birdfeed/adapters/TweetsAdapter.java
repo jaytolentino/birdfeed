@@ -36,6 +36,7 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
             convertView = inflater.inflate(R.layout.item_tweet, parent, false);
 
             holder.ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImg);
+            holder.ivProfileImage.setImageResource(android.R.color.transparent);
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), holder.ivProfileImage);
 
@@ -48,7 +49,6 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
             holder = (TweetViewHolder) convertView.getTag();
         }
 
-        holder.ivProfileImage.setImageResource(android.R.color.transparent);
         holder.tvUsername.setText(tweet.getUser().getUsername());
         holder.tvBody.setText(tweet.getBody());
         return convertView;
