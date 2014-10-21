@@ -17,11 +17,13 @@ __Required:__
   * User can then enter a new tweet and post this to twitter
   * User is taken back to home timeline with new tweet visible in timeline
 
+_Optional:_
+* On the home feed, links in tweets are clickable and will launch the web browser (see autolink)
+
 ### To complete...
 
 _Optional:_
-* Links in tweets are clickable and will launch the web browser (see autolink)
-* User can see a counter with total number of characters left for tweet
+* When composing a tweet, user can see a counter with total number of characters left for tweet
 * Advanced: User can refresh tweets timeline by pulling down to refresh (i.e pull-to-refresh)
 * Advanced: User can open the twitter app offline and see last loaded tweets
   * Tweets are persisted into sqlite and can be displayed from the local DB

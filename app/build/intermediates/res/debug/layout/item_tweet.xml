@@ -30,7 +30,9 @@
         android:layout_toEndOf="@+id/ivProfileImg"
         android:layout_below="@+id/tvUsername"
         android:layout_alignRight="@+id/tvTimestamp"
-        android:layout_alignEnd="@+id/tvTimestamp" />
+        android:layout_alignEnd="@+id/tvTimestamp"
+        android:autoLink="all"
+        android:linksClickable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,6 +43,6 @@
         android:layout_toRightOf="@+id/tvUsername"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
 </RelativeLayout>
 <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/layout/item_tweet.xml -->

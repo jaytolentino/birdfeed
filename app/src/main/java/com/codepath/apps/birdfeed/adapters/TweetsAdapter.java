@@ -2,6 +2,7 @@ package com.codepath.apps.birdfeed.adapters;
 
 import android.content.Context;
 import android.media.Image;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
