@@ -10,5 +10,8 @@
     <string name="sample_username">\@foo</string>
     <string name="sample_body">This is a tweet body</string>
     <string name="sample_timestamp">1 hr ago</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_tweet">Tweet</string>
+    <string name="hint_tweet">What\'s happening?</string>
 
 </resources>

@@ -6742,16 +6742,16 @@ false
                     msgid="3588849162933574182" >"Več možnosti"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deljenje z"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Končano"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Pokaži vse"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Končano"
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deljenje z"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
@@ -6770,12 +6770,12 @@ false
                     msgid="8264924765203268293" >"Iskanje"
                 </string>
                 <string
-                    name="abc_searchview_description_submit"
-                    msgid="8928215447528550784" >"Pošiljanje poizvedbe"
-                </string>
-                <string
                     name="abc_searchview_description_query"
                     msgid="2550479030709304392" >"Iskalna poizvedba"
+                </string>
+                <string
+                    name="abc_searchview_description_submit"
+                    msgid="8928215447528550784" >"Pošiljanje poizvedbe"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -8302,11 +8302,6 @@ false
                 qualifiers=""
                 type="menu" />
             <file
-                name="photos"
-                path="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/menu/photos.xml"
-                qualifiers=""
-                type="menu" />
-            <file
                 path="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/values/dimens.xml"
                 qualifiers="" >
                 <dimen name="activity_horizontal_margin" >16dp
@@ -8319,9 +8314,15 @@ false
                 qualifiers="" >
                 <string name="login_label" >Log in to Twitter
                 </string>
+                <string name="hint_tweet" >What\'s happening?
+                </string>
                 <string name="action_settings" >Settings
                 </string>
+                <string name="hello_blank_fragment" >Hello blank fragment
+                </string>
                 <string name="title_activity_feed" >FeedActivity
+                </string>
+                <string name="button_tweet" >Tweet
                 </string>
                 <string name="app_name" >Birdfeed
                 </string>
@@ -8402,6 +8403,11 @@ false
                 path="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/drawable-xxxhdpi/ic_launcher.png"
                 qualifiers="xxxhdpi-v4"
                 type="drawable" />
+            <file
+                name="fragment_compose_tweet"
+                path="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/layout/fragment_compose_tweet.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/generated/res/rs/debug" />
         <source path="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/generated/res/generated/debug" />

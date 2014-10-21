@@ -6,5 +6,11 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
+    <item android:id="@+id/action_compose"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Write new Tweet"
+        android:onClick="onComposeTweet"
+        />
 </menu>
 <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/menu/feed.xml -->

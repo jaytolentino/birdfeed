@@ -1,15 +1,21 @@
 package com.codepath.apps.birdfeed.activities;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.codepath.apps.birdfeed.R;
 import com.codepath.apps.birdfeed.adapters.EndlessScrollListener;
 import com.codepath.apps.birdfeed.adapters.TweetsAdapter;
+import com.codepath.apps.birdfeed.fragments.ComposeTweetFragment;
 import com.codepath.apps.birdfeed.models.Tweet;
 import com.codepath.apps.birdfeed.networking.TwitterApplication;
 import com.codepath.apps.birdfeed.networking.TwitterClient;
@@ -42,7 +48,12 @@ public class FeedActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.feed, menu);
+        MenuItem composeItem = menu.findItem(R.id.action_compose);
         return true;
+    }
+
+    private void toast() {
+        Toast.makeText(this, "woah", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -55,6 +66,21 @@ public class FeedActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onComposeTweet(MenuItem item) {
+        Bundle bundle = new Bundle();
+        bundle.putString("title", "Compotwise New Tweet");
+
+        FragmentManager fm = getSupportFragmentManager();
+        ComposeTweetFragment composeTweet = ComposeTweetFragment.newInstance("Write a new tweet");
+        composeTweet.setArguments(bundle);
+        composeTweet.show(fm, "fragment_compose_tweet");
+    }
+
+    public void refreshTimeline() {
+        aTweets.clear();
+        populateTimeline();
     }
 
     private void populateTimeline() {
