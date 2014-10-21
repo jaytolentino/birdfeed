@@ -15,12 +15,9 @@ __Required:__
 * User can compose a new tweet
   * User can click a “Compose” icon in the Action Bar on the top right
   * User can then enter a new tweet and post this to twitter
+  * User is taken back to home timeline with new tweet visible in timeline
 
 ### To complete...
-
-__Required:__
-* User can compose a new tweet
-  * User is taken back to home timeline with new tweet visible in timeline
 
 _Optional:_
 * Links in tweets are clickable and will launch the web browser (see autolink)
@@ -35,4 +32,3 @@ _Optional:_
 * Bonus: Compose activity is replaced with a modal overlay
 
 ## Used
-* 

@@ -1,6 +1,7 @@
 package com.codepath.apps.birdfeed.fragments;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.codepath.apps.birdfeed.utils.ProgressBarHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class ComposeTweetFragment extends DialogFragment {
     private TwitterClient client;
@@ -49,28 +51,7 @@ public class ComposeTweetFragment extends DialogFragment {
         sendTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView etComposeTweet = (TextView) currentView.findViewById(R.id.etComposeTweet);
-                String tweetContent = etComposeTweet.getText().toString();
-                final FeedActivity feedActivity = (FeedActivity) getActivity();
-                ProgressBarHandler.showProgressBar(getActivity());
-
-                client.postNewTweet(tweetContent, new JsonHttpResponseHandler() {
-                    @Override
-                    public void onSuccess(JSONArray jsonArray) {
-                        feedActivity.refreshTimeline();
-                        ((ComposeTweetFragment) getParentFragment()).dismiss();
-                        ProgressBarHandler.hideProgressBar(feedActivity);
-                    }
-
-                    @Override
-                    public void onFailure(Throwable throwable, String s) {
-                        Log.d("debug", throwable.toString());
-                        Log.d("debug", s);
-                    }
-                });
-
-                ((FeedActivity) getActivity()).refreshTimeline();
-                getDialog().dismiss();
+                sendTweet();
             }
         });
 
@@ -78,8 +59,23 @@ public class ComposeTweetFragment extends DialogFragment {
 
     }
 
-    public void dismiss() {
-        getDialog().dismiss();
-    }
+    private void sendTweet() {
+        TextView etComposeTweet = (TextView) getDialog().findViewById(R.id.etComposeTweet);
+        String tweetContent = etComposeTweet.getText().toString();
+        ProgressBarHandler.showProgressBar(getActivity());
 
+        client.postNewTweet(tweetContent, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(JSONObject jsonObject) {
+                ((FeedActivity) getActivity()).refreshTimeline();
+                getDialog().dismiss();
+            }
+
+            @Override
+            public void onFailure(Throwable throwable, String s) {
+                Log.d("debug", throwable.toString());
+                Log.d("debug", s);
+            }
+        });
+    }
 }

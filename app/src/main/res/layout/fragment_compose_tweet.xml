@@ -24,7 +24,6 @@
         android:text="@string/button_tweet"
         android:id="@+id/btnSendTweet"
         android:layout_below="@+id/etComposeTweet"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

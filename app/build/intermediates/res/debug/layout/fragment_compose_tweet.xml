@@ -24,8 +24,7 @@
         android:text="@string/button_tweet"
         android:id="@+id/btnSendTweet"
         android:layout_below="@+id/etComposeTweet"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/layout/fragment_compose_tweet.xml -->

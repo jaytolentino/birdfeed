@@ -48,7 +48,6 @@ public class FeedActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.feed, menu);
-        MenuItem composeItem = menu.findItem(R.id.action_compose);
         return true;
     }
 
@@ -70,7 +69,7 @@ public class FeedActivity extends ActionBarActivity {
 
     public void onComposeTweet(MenuItem item) {
         Bundle bundle = new Bundle();
-        bundle.putString("title", "Compotwise New Tweet");
+        bundle.putString("title", "Compose New Tweet");
 
         FragmentManager fm = getSupportFragmentManager();
         ComposeTweetFragment composeTweet = ComposeTweetFragment.newInstance("Write a new tweet");
