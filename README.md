@@ -20,11 +20,11 @@ __Required:__
 _Optional:_
 * On the home feed, links in tweets are clickable and will launch the web browser (see autolink)
 * When composing a tweet, user can see a counter with total number of characters left for tweet
+* Advanced: User can refresh tweets timeline by pulling down to refresh (i.e pull-to-refresh)
 
 ### To complete...
 
 _Optional:_
-* Advanced: User can refresh tweets timeline by pulling down to refresh (i.e pull-to-refresh)
 * Advanced: User can open the twitter app offline and see last loaded tweets
   * Tweets are persisted into sqlite and can be displayed from the local DB
 * Advanced: User can tap a tweet to display a "detailed" view of that tweet

@@ -35,7 +35,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.codepath.apps.birdfeed" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e048ecc9-7ff4-45e6-b41e-0bf89697cd71" name="Default" comment="" />
@@ -60,10 +60,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FeedActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FeedActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25925925" vertical-offset="1881" max-vertical-offset="2685">
+            <state vertical-scroll-proportion="-7.269231" vertical-offset="1881" max-vertical-offset="2685">
               <caret line="140" column="20" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -99,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="615">
-              <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.4532967" vertical-offset="0" max-vertical-offset="728">
+              <caret line="22" column="93" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -819,7 +819,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_tweet.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/adapters/TweetsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_compose_tweet.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/fragments/ComposeTweetFragment.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -827,6 +826,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/models/Tweet.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/networking/TwitterClient.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1919,17 +1919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="615">
-          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5562914" vertical-offset="0" max-vertical-offset="755">
@@ -1983,7 +1972,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25925925" vertical-offset="1881" max-vertical-offset="2685">
+        <state vertical-scroll-proportion="-7.269231" vertical-offset="1881" max-vertical-offset="2685">
           <caret line="140" column="20" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1993,6 +1982,17 @@
             <element signature="e#5325#5326#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4532967" vertical-offset="0" max-vertical-offset="728">
+          <caret line="22" column="93" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>
