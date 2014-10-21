@@ -5,6 +5,7 @@ import org.scribe.builder.api.FlickrApi;
 import org.scribe.builder.api.TwitterApi;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.codepath.oauth.OAuthBaseClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -38,6 +39,8 @@ public class TwitterClient extends OAuthBaseClient {
         String apiUrl = getApiUrl("statuses/home_timeline.json");
         RequestParams params = new RequestParams();
         params.put("start_id", "1");
+
+        Log.d("DEBUG", "GET " + apiUrl + ", START_ID: " + 1);
         client.get(apiUrl, params, handler);
     }
 
@@ -45,6 +48,17 @@ public class TwitterClient extends OAuthBaseClient {
         String apiUrl = getApiUrl("statuses/home_timeline.json");
         RequestParams params = new RequestParams();
         params.put("max_id", earliestId);
+
+        Log.d("DEBUG", "GET " + apiUrl + ", MAX_ID: " + earliestId);
+        client.get(apiUrl, params, handler);
+    }
+
+    public void getNewTimelineItems(String mostRecentId, AsyncHttpResponseHandler handler){
+        String apiUrl = getApiUrl("statuses/home_timeline.json");
+        RequestParams params = new RequestParams();
+        params.put("since_id", mostRecentId);
+
+        Log.d("DEBUG", "GET " + apiUrl + ", SINCE_ID: " + mostRecentId);
         client.get(apiUrl, params, handler);
     }
 
@@ -52,6 +66,8 @@ public class TwitterClient extends OAuthBaseClient {
         String apiUrl = getApiUrl("statuses/update.json");
         RequestParams params = new RequestParams();
         params.put("status", content);
+
+        Log.d("DEBUG", "PUT " + apiUrl + ", STATUS: " + content);
         client.post(apiUrl, params, handler);
     }
 

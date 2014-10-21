@@ -1,14 +1,12 @@
 package com.codepath.apps.birdfeed.activities;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,9 +20,11 @@ import com.codepath.apps.birdfeed.networking.TwitterClient;
 import com.codepath.apps.birdfeed.utils.ProgressBarHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.apache.commons.collections4.ListUtils;
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FeedActivity extends ActionBarActivity {
     private TwitterClient client;
@@ -32,6 +32,7 @@ public class FeedActivity extends ActionBarActivity {
     private TweetsAdapter aTweets;
     private ListView lvTweets;
     private String earliestId;
+    private SwipeRefreshLayout swipeContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,12 +85,13 @@ public class FeedActivity extends ActionBarActivity {
 
     private void populateTimeline() {
         ProgressBarHandler.showProgressBar(this);
+        Log.d("debug", "Began populating feed");
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray json) {
                 aTweets.addAll(Tweet.fromJSONArray(json));
-                earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getUid());
-                Log.d("debug", "ID: " + earliestId);
+                earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
+                Log.d("debug", "Finished populating feed");
                 ProgressBarHandler.hideProgressBar(FeedActivity.this);
             }
 
@@ -107,6 +109,7 @@ public class FeedActivity extends ActionBarActivity {
         aTweets = new TweetsAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
         setupTweetScroll();
+        setupSwipeContainer();
     }
 
     // TODO: possible to reduce repeated code here?
@@ -114,11 +117,13 @@ public class FeedActivity extends ActionBarActivity {
         lvTweets.setOnScrollListener(new EndlessScrollListener() {
             @Override
             public void onLoadMore(int page, int totalItemsCount) {
+                Log.d("debug", "Began loading endless scroll");
                 client.getHomeTimeline(earliestId, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(JSONArray json) {
                         aTweets.addAll(Tweet.fromJSONArray(json));
-                        earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getUid());
+                        earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
+                        Log.d("debug", "Finished loading endless scroll");
                     }
 
                     @Override
@@ -129,5 +134,42 @@ public class FeedActivity extends ActionBarActivity {
                 });
             }
         });
+    }
+
+    private void setupSwipeContainer() {
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshFeed();
+            }
+        });
+        swipeContainer.setColorScheme(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+    }
+
+    private void refreshFeed() {
+        if (!aTweets.isEmpty()) {
+            String mostRecentId = String.valueOf(aTweets.getItem(0).getTweetId());
+            Log.d("debug", "Began refreshing feed");
+            client.getNewTimelineItems(mostRecentId, new JsonHttpResponseHandler() {
+                @Override //TODO refactor?
+                public void onSuccess(JSONArray json) {
+                    List<Tweet> refreshedTweets = ListUtils.union(Tweet.fromJSONArray(json), tweets);
+                    aTweets.clear();
+                    aTweets.addAll(refreshedTweets);
+                    swipeContainer.setRefreshing(false);
+                    Log.d("debug", "Finished refreshing feed");
+                }
+
+                @Override
+                public void onFailure(Throwable throwable, String s) {
+                    Log.d("debug", throwable.toString());
+                    Log.d("debug", s);
+                }
+            });
+        }
     }
 }

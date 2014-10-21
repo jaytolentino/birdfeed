@@ -66,7 +66,7 @@ public class Tweet {
         return body;
     }
 
-    public long getUid() {
+    public long getTweetId() {
         return tweetId;
     }
 

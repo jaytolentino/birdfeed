@@ -8,11 +8,11 @@
         revision="20.0.0"
         sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
     <item
-        dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-bca9cd8c8082330ef7549e0398af852faae531fd.jar"
-        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/android-support-v4-c2b3ef49c1d35c104d7f4e655ef1fc0ec1eb0c08.jar"
+        jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/libs/android-support-v4.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+        sha1="ded9acc6a9792b8f1afc470f0c9cd36d178914cd"/>
     <item
         dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/scribe-codepath-6ac0c057d3ab214dfacc5fa0571d12634c6d06e5.jar"
         jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/libs/scribe-codepath.jar"
@@ -20,11 +20,11 @@
         revision="20.0.0"
         sha1="6e0748acc9e7be0695de0d38016d260df52d9167"/>
     <item
-        dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/classes-21fa124bba7fe90ec64b57ec461b2e81e96bca88.jar"
-        jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/commons-collections4-4.0-9caeed74a51a1fb56204840d740158bdd58be490.jar"
+        jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/libs/commons-collections4-4.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+        sha1="da217367fd25e88df52ba79e47658d4cf928b0d1"/>
     <item
         dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/ActiveAndroid-3.1-08c6335cd-1148314c03ed75862b9e84e133bb6b7a66105a7d.jar"
         jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/libs/ActiveAndroid-3.1-08c6335cd.jar"
@@ -37,12 +37,6 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="f70e680861fdf9449819003e7799a4e9aca047f8"/>
-    <item
-        dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-3854abd76c1a5589b24bcb1caba81e5f7c8ab642.jar"
-        jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
     <item
         dex="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.8.4-3ff038b683fd36678655da613526932bb9c2885c.jar"
         jar="/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/libs/universal-image-loader-1.8.4.jar"
