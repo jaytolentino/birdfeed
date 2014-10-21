@@ -4,11 +4,14 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.codepath.apps.birdfeed.R;
@@ -23,6 +26,10 @@ import org.json.JSONObject;
 
 public class ComposeTweetFragment extends DialogFragment {
     private TwitterClient client;
+    private EditText etComposeTweet;
+    private Button btnSendTweet;
+    private TextView tvCounter;
+    private TextWatcher mComposeWatcher;
 
     public static ComposeTweetFragment newInstance(String title) {
         ComposeTweetFragment fragment = new ComposeTweetFragment();
@@ -40,15 +47,14 @@ public class ComposeTweetFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View currentView = inflater.inflate(R.layout.fragment_compose_tweet, container, false);
+        setupViews(currentView);
         client = TwitterApplication.getRestClient();
 
         if (getArguments() != null) {
             String title = getArguments().getString("title");
             getDialog().setTitle(title);
         }
-
-        Button sendTweet = (Button) currentView.findViewById(R.id.btnSendTweet);
-        sendTweet.setOnClickListener(new View.OnClickListener() {
+        btnSendTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendTweet();
@@ -59,8 +65,28 @@ public class ComposeTweetFragment extends DialogFragment {
 
     }
 
+    private void setupViews(View view) {
+        mComposeWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                tvCounter.setText(String.valueOf(140 - charSequence.length()) + " chars left");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        };
+        btnSendTweet = (Button) view.findViewById(R.id.btnSendTweet);
+        etComposeTweet = (EditText) view.findViewById(R.id.etComposeTweet);
+        tvCounter = (TextView) view.findViewById(R.id.tvCounter);
+        etComposeTweet.addTextChangedListener(mComposeWatcher);
+    }
+
     private void sendTweet() {
-        TextView etComposeTweet = (TextView) getDialog().findViewById(R.id.etComposeTweet);
         String tweetContent = etComposeTweet.getText().toString();
         ProgressBarHandler.showProgressBar(getActivity());
 
