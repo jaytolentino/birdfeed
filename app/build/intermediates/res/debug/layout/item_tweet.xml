@@ -4,45 +4,95 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/ivProfileImg"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:id="@+id/ivCoverImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_launcher" />
+        android:layout_alignStart="@+id/tweetContainer"
+        android:layout_alignBottom="@+id/tweetContainer"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop" />
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sample_username"
-        android:id="@+id/tvUsername"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/ivProfileImg"
-        android:layout_toEndOf="@+id/ivProfileImg" />
+        android:background="@color/bg_transparent_white"
+        android:id="@+id/tweetContainer">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sample_body"
-        android:id="@+id/tvBody"
-        android:layout_toRightOf="@+id/ivProfileImg"
-        android:layout_toEndOf="@+id/ivProfileImg"
-        android:layout_below="@+id/tvUsername"
-        android:layout_alignRight="@+id/tvTimestamp"
-        android:layout_alignEnd="@+id/tvTimestamp"
-        android:autoLink="all"
-        android:linksClickable="true" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/ivProfileImg"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginRight="@dimen/padding_medium"
+            android:paddingLeft="@dimen/padding_small"
+            android:layout_marginTop="@dimen/padding_small" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sample_timestamp"
-        android:id="@+id/tvTimestamp"
-        android:layout_toEndOf="@+id/tvUsername"
-        android:layout_toRightOf="@+id/tvUsername"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_username"
+            android:id="@+id/tvUsername"
+            android:layout_toEndOf="@+id/tvFullName"
+            android:layout_toRightOf="@+id/tvFullName"
+            android:layout_alignTop="@+id/tvFullName"
+            android:layout_alignRight="@+id/tvBody"
+            android:layout_alignEnd="@+id/tvBody"
+            android:layout_alignBottom="@+id/tvFullName"
+            android:gravity="top" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_body"
+            android:id="@+id/tvBody"
+            android:layout_toEndOf="@+id/ivProfileImg"
+            android:autoLink="all"
+            android:linksClickable="true"
+            android:layout_alignLeft="@+id/tvFullName"
+            android:layout_alignStart="@+id/tvFullName"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tvUsername"
+            android:layout_marginRight="@dimen/padding_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_timestamp"
+            android:id="@+id/tvTimestamp"
+            android:layout_toEndOf="@+id/tvUsername"
+            android:layout_alignLeft="@+id/tvBody"
+            android:layout_alignStart="@+id/tvBody"
+            android:layout_alignRight="@+id/tvBody"
+            android:layout_alignEnd="@+id/tvBody"
+            android:layout_below="@+id/tvBody"
+            android:paddingBottom="@dimen/padding_small"
+            android:gravity="right|end"
+            android:textSize="@dimen/textsize_small"
+            android:paddingTop="@dimen/padding_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_fullname"
+            android:id="@+id/tvFullName"
+            android:layout_toRightOf="@+id/ivProfileImg"
+            android:layout_toEndOf="@+id/ivProfileImg"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_alignTop="@+id/ivProfileImg"
+            android:gravity="top" />
+
+    </RelativeLayout>
+
+
+
 </RelativeLayout>
 <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/layout/item_tweet.xml -->

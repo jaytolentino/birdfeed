@@ -1,6 +1,7 @@
 package com.codepath.apps.birdfeed.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.media.Image;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.codepath.apps.birdfeed.R;
@@ -49,25 +51,37 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
     }
 
     private void initializeViews(TweetViewHolder holder, View convertView) {
+        holder.ivCoverImage = (ImageView) convertView.findViewById(R.id.ivCoverImage);
         holder.ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImg);
         holder.tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
+        holder.tvFullName = (TextView) convertView.findViewById(R.id.tvFullName);
         holder.tvBody = (TextView) convertView.findViewById(R.id.tvBody);
         holder.tvTimestamp = (TextView) convertView.findViewById(R.id.tvTimestamp);
     }
 
     private void setViewContent(Tweet tweet, TweetViewHolder holder) {
-        holder.ivProfileImage.setImageResource(android.R.color.transparent);
         ImageLoader imageLoader = ImageLoader.getInstance();
+        holder.ivProfileImage.setImageResource(android.R.color.transparent);
         imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), holder.ivProfileImage);
 
-        holder.tvUsername.setText(tweet.getUser().getUsername());
+        holder.ivCoverImage.setImageResource(android.R.color.transparent);
+        imageLoader.displayImage(tweet.getUser().getCoverImageUrl(), holder.ivCoverImage);
+
+        holder.tvFullName.setText(tweet.getUser().getName());
+
+        holder.tvUsername.setText("@" + tweet.getUser().getUsername());
+        holder.tvUsername.setTextColor(getContext().getResources().getColor(R.color.gray_font));
+
         holder.tvBody.setText(tweet.getBody());
 
         holder.tvTimestamp.setText(tweet.getRelativeTimetamp());
+        holder.tvTimestamp.setTextColor(Color.LTGRAY);
     }
 
     private class TweetViewHolder {
+        public ImageView ivCoverImage;
         public ImageView ivProfileImage;
+        public TextView tvFullName;
         public TextView tvUsername;
         public TextView tvBody;
         public TextView tvTimestamp;

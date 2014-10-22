@@ -14,5 +14,6 @@
     <string name="button_tweet">Tweet</string>
     <string name="hint_tweet">What\'s happening?</string>
     <string name="label_counter">140 chars left</string>
+    <string name="sample_fullname">Jane Smith</string>
 
 </resources>

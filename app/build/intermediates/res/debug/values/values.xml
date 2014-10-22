@@ -78,6 +78,13 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
+    <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="bg_transparent_white">#aaffffff</color>
+    <color name="gray_font">#aaaaaa</color>
+    <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <eat-comment />
 
     <declare-styleable name="ActionBar">
 
@@ -520,6 +527,16 @@
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
+    <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_xsmall">3dp</dimen>
+    <dimen name="textsize_small">12dp</dimen>
+    <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <eat-comment />
+
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
@@ -554,6 +571,7 @@
     <string name="label_counter">140 chars left</string>
     <string name="login_label">Log in to Twitter</string>
     <string name="sample_body">This is a tweet body</string>
+    <string name="sample_fullname">Jane Smith</string>
     <string name="sample_timestamp">1 hr ago</string>
     <string name="sample_username">\@foo</string>
     <string name="title_activity_feed">FeedActivity</string>

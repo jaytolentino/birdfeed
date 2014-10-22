@@ -26,6 +26,7 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO cleanup feedactivity with fragment(s)
 public class FeedActivity extends ActionBarActivity {
     private TwitterClient client;
     private ArrayList<Tweet> tweets;
@@ -92,6 +93,8 @@ public class FeedActivity extends ActionBarActivity {
                 aTweets.addAll(Tweet.fromJSONArray(json));
                 earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
                 Log.d("debug", "Finished populating feed");
+
+                Log.d("debug", json.toString());
                 ProgressBarHandler.hideProgressBar(FeedActivity.this);
             }
 
