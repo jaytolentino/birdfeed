@@ -81,7 +81,7 @@
     <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/res/values/colors.xml -->
     <eat-comment />
 
-    <color name="bg_transparent_white">#aaffffff</color>
+    <color name="bg_transparent_white">#eeffffff</color>
     <color name="gray_font">#aaaaaa</color>
     <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
