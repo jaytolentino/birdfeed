@@ -1,13 +1,17 @@
 package com.codepath.apps.birdfeed.activities;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codepath.apps.birdfeed.R;
+import com.codepath.apps.birdfeed.fragments.ComposeTweetFragment;
 import com.codepath.apps.birdfeed.models.Tweet;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -34,7 +38,6 @@ public class TweetDetailActivity extends Activity {
         setTextViews();
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -57,6 +60,16 @@ public class TweetDetailActivity extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
+    }
+
+    public void onReply(View view) {
+//        Bundle bundle = new Bundle();
+//        bundle.putString("title", "Reply to " + tweet.getUser().getUsername());
+//
+//        ComposeTweetFragment replyTweet = ComposeTweetFragment.newInstance("Reply to " + tweet.getUser().getUsername());
+//        replyTweet.setArguments(bundle);
+//        replyTweet.show(fm, "fragment_compose_tweet");
 
     }
 
@@ -101,4 +114,5 @@ public class TweetDetailActivity extends Activity {
             throw new NullPointerException("Tweets deleted after process killed.");
         }
     }
+
 }
