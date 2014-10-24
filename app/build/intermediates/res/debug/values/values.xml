@@ -531,9 +531,12 @@
     <eat-comment />
 
     <dimen name="image_profile">40dp</dimen>
+    <dimen name="padding_large">15dp</dimen>
     <dimen name="padding_medium">10dp</dimen>
     <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_xlarge">20dp</dimen>
     <dimen name="padding_xsmall">3dp</dimen>
+    <dimen name="texsize_medium">16dp</dimen>
     <dimen name="textsize_large">20dp</dimen>
     <dimen name="textsize_small">12dp</dimen>
     <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->

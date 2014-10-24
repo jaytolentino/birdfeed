@@ -12,7 +12,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/userInfoContainer">
+        android:id="@+id/userInfoContainer"
+        android:padding="@dimen/padding_medium">
 
         <ImageView
             android:layout_width="@dimen/abc_action_bar_progress_bar_size"
@@ -35,7 +36,8 @@
             android:textSize="@dimen/textsize_large"
             android:textIsSelectable="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="@dimen/padding_medium" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,10 +45,12 @@
             android:text="@string/sample_username"
             android:id="@+id/tvDetailUsername"
             android:layout_toEndOf="@+id/ivDetailProfilePic"
-            android:layout_below="@+id/tvDetailName"
-            android:layout_toRightOf="@+id/ivDetailProfilePic"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tvDetailName"
+            android:layout_alignLeft="@+id/tvDetailName"
+            android:layout_alignStart="@+id/tvDetailName"
+            android:textColor="@color/gray_font" />
     </RelativeLayout>
 
     <ImageView
@@ -67,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/userInfoContainer"
         android:id="@+id/transparentHolder"
-        android:padding="@dimen/padding_medium"
+        android:padding="@dimen/padding_xlarge"
         android:layout_alignRight="@+id/userInfoContainer"
         android:layout_alignEnd="@+id/userInfoContainer"
         android:layout_alignLeft="@+id/userInfoContainer"
@@ -81,7 +85,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/texsize_medium">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,7 +97,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:linksClickable="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -101,7 +107,9 @@
                 android:id="@+id/tvDetailTimestamp"
                 android:layout_below="@+id/tvDetailTweet"
                 android:layout_alignRight="@+id/tvDetailTweet"
-                android:layout_alignEnd="@+id/tvDetailTweet" />
+                android:layout_alignEnd="@+id/tvDetailTweet"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:textColor="@color/gray_font" />
 
         </RelativeLayout>
 
@@ -112,7 +120,8 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/ivDetailBackground"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:padding="@dimen/padding_medium">
 
         <TextView
             android:layout_width="wrap_content"
@@ -121,7 +130,8 @@
             android:id="@+id/tvTitleRetweet"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/texsize_medium" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -142,10 +152,11 @@
             android:text="@string/placeholder_number"
             android:id="@+id/tvCountFavorites"
             android:layout_toEndOf="@+id/tvCountRetweets"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
             android:layout_below="@+id/textView3"
             android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3"
-            android:layout_toRightOf="@+id/tvCountRetweets" />
+            android:layout_alignEnd="@+id/textView3" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -154,18 +165,19 @@
             android:id="@+id/textView3"
             android:layout_toEndOf="@+id/tvTitleRetweet"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tvTitleRetweet" />
+            android:layout_toRightOf="@+id/tvTitleRetweet"
+            android:layout_marginRight="@dimen/padding_medium" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_reply"
             android:id="@+id/btnDetailReply"
-            android:layout_toEndOf="@+id/tvCountFavorites"
+            android:layout_toEndOf="@+id/textView3"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/tvCountFavorites" />
+            android:layout_toRightOf="@+id/textView3" />
 
     </RelativeLayout>
 

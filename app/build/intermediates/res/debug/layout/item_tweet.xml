@@ -22,8 +22,11 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding_medium"
-        android:id="@+id/transparentHolder">
+        android:id="@+id/transparentHolder"
+        android:paddingTop="@dimen/padding_xlarge"
+        android:paddingBottom="@dimen/padding_xlarge"
+        android:paddingLeft="@dimen/padding_medium"
+        android:paddingRight="@dimen/padding_medium">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -44,7 +47,7 @@
                 android:layout_alignParentStart="true"
                 android:src="@drawable/ic_launcher"
                 android:layout_marginRight="@dimen/padding_medium"
-                android:paddingLeft="@dimen/padding_small"
+                android:paddingLeft="@dimen/padding_medium"
                 android:layout_marginTop="@dimen/padding_small" />
 
             <TextView
@@ -73,7 +76,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/tvUsername"
-                android:layout_marginRight="@dimen/padding_small" />
+                android:layout_marginRight="@dimen/padding_medium"
+                android:textSize="@dimen/texsize_medium" />
 
             <TextView
                 android:layout_width="wrap_content"

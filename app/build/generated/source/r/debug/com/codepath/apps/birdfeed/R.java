@@ -841,11 +841,14 @@ containing a value of this type.
         public static final int dialog_fixed_width_major=0x7f080015;
         public static final int dialog_fixed_width_minor=0x7f080016;
         public static final int image_profile=0x7f080017;
-        public static final int padding_medium=0x7f080018;
-        public static final int padding_small=0x7f080019;
-        public static final int padding_xsmall=0x7f08001a;
-        public static final int textsize_large=0x7f08001b;
-        public static final int textsize_small=0x7f08001c;
+        public static final int padding_large=0x7f080018;
+        public static final int padding_medium=0x7f080019;
+        public static final int padding_small=0x7f08001a;
+        public static final int padding_xlarge=0x7f08001b;
+        public static final int padding_xsmall=0x7f08001c;
+        public static final int texsize_medium=0x7f08001d;
+        public static final int textsize_large=0x7f08001e;
+        public static final int textsize_small=0x7f08001f;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;

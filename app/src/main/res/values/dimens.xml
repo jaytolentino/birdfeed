@@ -9,5 +9,8 @@
     <dimen name="padding_xsmall">3dp</dimen>
     <dimen name="textsize_large">20dp</dimen>
     <dimen name="image_profile">40dp</dimen>
+    <dimen name="padding_large">15dp</dimen>
+    <dimen name="padding_xlarge">20dp</dimen>
+    <dimen name="texsize_medium">16dp</dimen>
 
 </resources>
