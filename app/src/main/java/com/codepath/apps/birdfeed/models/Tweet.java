@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Created by jay on 10/17/14.
  */
-public class Tweet {
+public class Tweet implements Serializable {
     private String body;
     private long tweetId;
     private String createdAt;

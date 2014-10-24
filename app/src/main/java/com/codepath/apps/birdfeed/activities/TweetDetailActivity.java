@@ -1,6 +1,6 @@
 package com.codepath.apps.birdfeed.activities;
 
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,9 +15,7 @@ import com.codepath.apps.birdfeed.fragments.ComposeTweetFragment;
 import com.codepath.apps.birdfeed.models.Tweet;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import org.w3c.dom.Text;
-
-public class TweetDetailActivity extends Activity {
+public class TweetDetailActivity extends FragmentActivity {
     private Tweet tweet;
     private ImageView ivDetailProfilePic;
     private ImageView ivDetailBackground;
@@ -64,13 +62,14 @@ public class TweetDetailActivity extends Activity {
     }
 
     public void onReply(View view) {
-//        Bundle bundle = new Bundle();
-//        bundle.putString("title", "Reply to " + tweet.getUser().getUsername());
-//
-//        ComposeTweetFragment replyTweet = ComposeTweetFragment.newInstance("Reply to " + tweet.getUser().getUsername());
-//        replyTweet.setArguments(bundle);
-//        replyTweet.show(fm, "fragment_compose_tweet");
+        Bundle bundle = new Bundle();
+        bundle.putString("title", "Reply to " + tweet.getUser().getName());
+        bundle.putSerializable("tweet", tweet);
 
+        FragmentManager fm = getSupportFragmentManager();
+        ComposeTweetFragment composeTweet = ComposeTweetFragment.newInstance("Reply to " + tweet.getUser().getName());
+        composeTweet.setArguments(bundle);
+        composeTweet.show(fm, "fragment_compose_tweet");
     }
 
     private void initailizeMemberVariables() {
@@ -115,4 +114,7 @@ public class TweetDetailActivity extends Activity {
         }
     }
 
+    public void toastSuccessfulReply() {
+        Toast.makeText(this, "Reply sent!", Toast.LENGTH_SHORT).show();
+    }
 }

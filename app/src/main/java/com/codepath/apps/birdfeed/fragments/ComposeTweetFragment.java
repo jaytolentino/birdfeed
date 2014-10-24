@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.codepath.apps.birdfeed.R;
 import com.codepath.apps.birdfeed.activities.FeedActivity;
+import com.codepath.apps.birdfeed.activities.TweetDetailActivity;
+import com.codepath.apps.birdfeed.models.Tweet;
 import com.codepath.apps.birdfeed.networking.TwitterApplication;
 import com.codepath.apps.birdfeed.networking.TwitterClient;
 import com.codepath.apps.birdfeed.utils.ProgressBarHandler;
@@ -30,6 +32,7 @@ public class ComposeTweetFragment extends DialogFragment {
     private Button btnSendTweet;
     private TextView tvCounter;
     private TextWatcher mComposeWatcher;
+    private Tweet tweet;
 
     public static ComposeTweetFragment newInstance(String title) {
         ComposeTweetFragment fragment = new ComposeTweetFragment();
@@ -54,12 +57,23 @@ public class ComposeTweetFragment extends DialogFragment {
             String title = getArguments().getString("title");
             getDialog().setTitle(title);
         }
-        btnSendTweet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendTweet();
-            }
-        });
+        if (getArguments().containsKey("tweet")) {
+            tweet = (Tweet) getArguments().get("tweet");
+            btnSendTweet.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sendReply();
+                }
+            });
+        }
+        else {
+            btnSendTweet.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sendTweet();
+                }
+            });
+        }
 
         return currentView;
 
@@ -94,6 +108,26 @@ public class ComposeTweetFragment extends DialogFragment {
             @Override
             public void onSuccess(JSONObject jsonObject) {
                 ((FeedActivity) getActivity()).refreshTimeline();
+                getDialog().dismiss();
+            }
+
+            @Override
+            public void onFailure(Throwable throwable, String s) {
+                Log.d("debug", throwable.toString());
+                Log.d("debug", s);
+            }
+        });
+    }
+
+    private void sendReply() {
+        String tweetOnly = etComposeTweet.getText().toString();
+        String tweetContent = "@" + tweet.getUser().getUsername() + " " + tweetOnly;
+        ProgressBarHandler.showProgressBar(getActivity());
+
+        client.postReplyTweet(tweetContent, tweet.getTweetId(), new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(JSONObject jsonObject) {
+                ((TweetDetailActivity) getActivity()).toastSuccessfulReply();
                 getDialog().dismiss();
             }
 
