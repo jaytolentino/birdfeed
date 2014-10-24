@@ -26,7 +26,9 @@
   </component>
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState />
+      <GlobalState>
+        <option name="visible" value="false" />
+      </GlobalState>
     </option>
   </component>
   <component name="AndroidLayouts">
@@ -35,7 +37,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.codepath.apps.birdfeed" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e048ecc9-7ff4-45e6-b41e-0bf89697cd71" name="Default" comment="" />
@@ -59,81 +61,38 @@
     <favorites_list name="android-rest-client-template-master" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5088874">
+    <splitter split-orientation="horizontal" split-proportion="0.40092167">
       <split-first>
         <leaf>
           <file leaf-file-name="FeedActivity.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.3846154" vertical-offset="659" max-vertical-offset="2820">
-                  <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="1320">
+                  <caret line="190" column="18" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="method#onCreate#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#onCreateOptionsMenu#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#onOptionsItemSelected#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#onComposeTweet#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#refreshTimeline#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#populateTimeline#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#initializeMemberVariables#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="method#setupTweetScroll#0;class#FeedActivity#0" expanded="false" />
+                    <element signature="e#5189#5591#0" expanded="true" />
+                    <element signature="e#5580#5581#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="activity_tweet_detail.xml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tweet_detail.xml">
-              <provider selected="true" editor-type-id="android-designer">
-                <state />
-              </provider>
-              <provider editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1862" max-vertical-offset="2865">
-                  <caret line="154" column="12" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ComposeTweetFragment.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/fragments/ComposeTweetFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1456" max-vertical-offset="2205">
-                  <caret line="126" column="62" selection-start-line="126" selection-start-column="62" selection-end-line="126" selection-end-column="62" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2285#2453#0" expanded="true" />
-                    <element signature="e#2438#2439#0" expanded="true" />
-                    <element signature="e#2525#2693#0" expanded="true" />
-                    <element signature="e#2678#2679#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TweetsAdapter.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/adapters/TweetsAdapter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1425">
-                  <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="item_tweet.xml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tweet.xml">
-              <provider editor-type-id="android-designer">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1815">
-                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider editor-type-id="MarkdownPreviewEditor">
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.55813956" vertical-offset="0" max-vertical-offset="645">
-                  <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
+                <state vertical-scroll-proportion="0.44827586" vertical-offset="0" max-vertical-offset="870">
+                  <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -143,30 +102,30 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="TweetDetailActivity.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/TweetDetailActivity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="840">
-                  <caret line="71" column="47" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <file leaf-file-name="activity_tweet_detail.xml" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tweet_detail.xml">
+              <provider selected="true" editor-type-id="android-designer">
+                <state />
+              </provider>
+              <provider editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="3090">
+                  <caret line="126" column="70" selection-start-line="126" selection-start-column="70" selection-end-line="126" selection-end-column="70" />
                   <folding>
-                    <element signature="method#onCreate#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#onCreateOptionsMenu#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#onOptionsItemSelected#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#onSaveInstanceState#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#initailizeMemberVariables#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#setImageViews#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#setTextViews#0;class#TweetDetailActivity#0" expanded="false" />
-                    <element signature="method#createTweetAtPosition#0;class#TweetDetailActivity#0" expanded="false" />
+                    <element signature="e#4193#4239#0" expanded="true" />
+                    <element signature="e#5109#5132#0" expanded="true" />
+                    <element signature="e#5797#5820#0" expanded="true" />
+                    <element signature="e#5865#5888#0" expanded="true" />
+                    <element signature="e#8434#8453#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TwitterClient.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="TwitterClient.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/networking/TwitterClient.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.84066767" vertical-offset="616" max-vertical-offset="1335">
-                  <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="1335">
+                  <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -175,8 +134,8 @@
           <file leaf-file-name="Tweet.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/models/Tweet.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1200">
-                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="934" max-vertical-offset="1545">
+                  <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
                   <folding />
                 </state>
               </provider>
@@ -897,22 +856,22 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/utils/ProgressBar.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/utils/ProgressBarHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/feed.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_compose_tweet.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/adapters/TweetsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_feed.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_tweet.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tweet_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/models/User.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/fragments/ComposeTweetFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/models/Tweet.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/adapters/TweetsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_compose_tweet.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_tweet.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/networking/TwitterClient.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/TweetDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/networking/TwitterClient.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/fragments/ComposeTweetFragment.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tweet_detail.xml" />
       </list>
     </option>
   </component>
@@ -1378,7 +1337,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Nuzzel/dev/Nuzzel-Android" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java&#10;SUCCESS&#9;PSI&#9;JAVA://com.codepath.apps.birdfeed.activities.LoginActivity#onLoginSuccess" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Main" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="180" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="252" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="true" />
   </component>
   <component name="RecentsManager">
@@ -1595,6 +1554,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24445647" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21095334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39872068" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1604,7 +1564,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20588236" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25373134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296146" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1617,7 +1577,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24445647" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15111563" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1640,7 +1599,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1668,7 +1627,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="975">
           <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#onCreate#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onComposeTweet#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#refreshTimeline#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#populateTimeline#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#initializeMemberVariables#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#setupTweetScroll#0;class#FeedActivity#0" expanded="false" />
+            <element signature="e#5189#5591#0" expanded="true" />
+            <element signature="e#5580#5581#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1711,7 +1679,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
           <caret line="57" column="56" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#onCreate#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onComposeTweet#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#refreshTimeline#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#populateTimeline#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#initializeMemberVariables#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#setupTweetScroll#0;class#FeedActivity#0" expanded="false" />
+            <element signature="e#5189#5591#0" expanded="true" />
+            <element signature="e#5580#5581#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1949,55 +1926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/tweet_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="601">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/adapters/TweetsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="1080">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tweet.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1815">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_compose_tweet.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tweet_detail.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1862" max-vertical-offset="2850">
-          <caret line="154" column="12" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="855">
@@ -2008,50 +1936,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/models/Tweet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1200">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="934" max-vertical-offset="1545">
+          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3846154" vertical-offset="659" max-vertical-offset="2820">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_compose_tweet.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="705">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/TweetDetailActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/tweet_detail.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="840">
-          <caret line="71" column="47" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
-          <folding>
-            <element signature="method#onCreate#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#onSaveInstanceState#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#initailizeMemberVariables#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#setImageViews#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#setTextViews#0;class#TweetDetailActivity#0" expanded="false" />
-            <element signature="method#createTweetAtPosition#0;class#TweetDetailActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/networking/TwitterClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84066767" vertical-offset="616" max-vertical-offset="1335">
-          <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="601">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/fragments/ComposeTweetFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1456" max-vertical-offset="2205">
+        <state vertical-scroll-proportion="0.6822742" vertical-offset="1278" max-vertical-offset="2205">
           <caret line="126" column="62" selection-start-line="126" selection-start-column="62" selection-end-line="126" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2063,15 +1975,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/adapters/TweetsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.510989" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="54" column="88" selection-start-line="54" selection-start-column="88" selection-end-line="54" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/TweetDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.98277843" vertical-offset="59" max-vertical-offset="1185">
+          <caret line="111" column="43" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="43" />
+          <folding>
+            <element signature="method#onCreate#0;class#TweetDetailActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#TweetDetailActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#TweetDetailActivity#0" expanded="false" />
+            <element signature="method#onSaveInstanceState#0;class#TweetDetailActivity#0" expanded="false" />
+            <element signature="method#initailizeMemberVariables#0;class#TweetDetailActivity#0" expanded="false" />
+            <element signature="method#createTweetAtPosition#0;class#TweetDetailActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/activities/FeedActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="1320">
+          <caret line="190" column="18" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
+          <folding>
+            <element signature="method#onCreate#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#onComposeTweet#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#refreshTimeline#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#populateTimeline#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#initializeMemberVariables#0;class#FeedActivity#0" expanded="false" />
+            <element signature="method#setupTweetScroll#0;class#FeedActivity#0" expanded="false" />
+            <element signature="e#5189#5591#0" expanded="true" />
+            <element signature="e#5580#5581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/codepath/apps/birdfeed/networking/TwitterClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="1335">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_tweet.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6432616" vertical-offset="497" max-vertical-offset="2025">
+          <caret line="71" column="38" selection-start-line="70" selection-start-column="58" selection-end-line="71" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55813956" vertical-offset="0" max-vertical-offset="645">
-          <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.44827586" vertical-offset="0" max-vertical-offset="870">
+          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tweet_detail.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="3090">
+          <caret line="126" column="70" selection-start-line="126" selection-start-column="70" selection-end-line="126" selection-end-column="70" />
+          <folding>
+            <element signature="e#4193#4239#0" expanded="true" />
+            <element signature="e#5109#5132#0" expanded="true" />
+            <element signature="e#5797#5820#0" expanded="true" />
+            <element signature="e#5865#5888#0" expanded="true" />
+            <element signature="e#8434#8453#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

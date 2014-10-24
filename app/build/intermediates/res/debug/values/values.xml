@@ -539,6 +539,7 @@
     <dimen name="texsize_medium">16dp</dimen>
     <dimen name="textsize_large">20dp</dimen>
     <dimen name="textsize_small">12dp</dimen>
+    <dimen name="textsize_xlarge">24dp</dimen>
     <!-- From: file:/Users/jay/AndroidStudioProjects/CodePath/Birdfeed/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 

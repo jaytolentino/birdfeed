@@ -19,6 +19,7 @@ public class TweetDetailActivity extends FragmentActivity {
     private Tweet tweet;
     private ImageView ivDetailProfilePic;
     private ImageView ivDetailBackground;
+    private ImageView ivDetailMedia;
     private TextView tvDetailName;
     private TextView tvDetailUsername;
     private TextView tvDetailTweet;
@@ -78,6 +79,7 @@ public class TweetDetailActivity extends FragmentActivity {
 
         ivDetailProfilePic = (ImageView) findViewById(R.id.ivDetailProfilePic);
         ivDetailBackground = (ImageView) findViewById(R.id.ivDetailBackground);
+        ivDetailMedia = (ImageView) findViewById(R.id.ivDetailMedia);
 
         tvDetailName = (TextView) findViewById(R.id.tvDetailName);
         tvDetailUsername = (TextView) findViewById(R.id.tvDetailUsername);
@@ -94,16 +96,23 @@ public class TweetDetailActivity extends FragmentActivity {
 
         ivDetailProfilePic.setImageResource(android.R.color.transparent);
         loader.displayImage(tweet.getUser().getProfileImageUrl(), ivDetailProfilePic);
+
+        if (tweet.hasMedia()) {
+            ivDetailMedia.setVisibility(View.VISIBLE);
+            ivDetailMedia.setImageResource(android.R.color.transparent);
+            loader.displayImage(tweet.getMediaUrl(), ivDetailMedia);
+        } else {
+            ivDetailMedia.setVisibility(View.GONE);
+        }
     }
 
     private void setTextViews() {
         tvDetailName.setText(tweet.getUser().getName());
-        tvDetailUsername.setText(tweet.getUser().getUsername());
+        tvDetailUsername.setText("@" + tweet.getUser().getUsername());
         tvDetailTweet.setText(tweet.getBody());
         tvDetailTimestamp.setText(tweet.getRelativeTimetamp());
         tvCountRetweets.setText(tweet.getRetweetCount());
         tvCountFavorites.setText(tweet.getFavoriteCount());
-
     }
 
     private void createTweetAtPosition(int tweetPosition) {

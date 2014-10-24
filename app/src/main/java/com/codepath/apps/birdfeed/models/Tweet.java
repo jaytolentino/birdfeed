@@ -2,6 +2,7 @@ package com.codepath.apps.birdfeed.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.codepath.apps.birdfeed.utils.TimestampParser;
 
@@ -25,6 +26,7 @@ public class Tweet implements Serializable {
     private User user;
     private String retweetCount;
     private String favoriteCount;
+    private String mediaUrl;
 
 
     public Tweet() {
@@ -41,6 +43,11 @@ public class Tweet implements Serializable {
             tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
             tweet.retweetCount = jsonObject.getString("retweet_count");
             tweet.favoriteCount =  jsonObject.getString("favorite_count");
+            if (jsonObject.has("extended_entities")) {
+                tweet.setMediaUrl(jsonObject.getJSONObject("extended_entities"));
+            } else {
+                tweet.mediaUrl = null;
+            }
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -98,5 +105,26 @@ public class Tweet implements Serializable {
 
     public String getFavoriteCount() {
         return favoriteCount;
+    }
+
+    public String getMediaUrl() {
+        return mediaUrl;
+    }
+
+    public boolean hasMedia() {
+        return mediaUrl != null;
+    }
+
+    private void setMediaUrl(JSONObject extEntities) {
+        try {
+            JSONArray media = extEntities.getJSONArray("media");
+            JSONObject mediaObject = media.getJSONObject(0);
+            mediaUrl = (String) mediaObject.get("media_url");
+            Log.d("debug", "Media URL: " + mediaUrl);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+            mediaUrl = null;
+        }
     }
 }

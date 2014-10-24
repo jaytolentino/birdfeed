@@ -12,5 +12,6 @@
     <dimen name="padding_large">15dp</dimen>
     <dimen name="padding_xlarge">20dp</dimen>
     <dimen name="texsize_medium">16dp</dimen>
+    <dimen name="textsize_xlarge">24dp</dimen>
 
 </resources>

@@ -53,6 +53,8 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
     private void initializeViews(TweetViewHolder holder, View convertView) {
         holder.ivCoverImage = (ImageView) convertView.findViewById(R.id.ivCoverImage);
         holder.ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImg);
+        holder.ivMedia = (ImageView) convertView.findViewById(R.id.ivMedia);
+
         holder.tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
         holder.tvFullName = (TextView) convertView.findViewById(R.id.tvFullName);
         holder.tvBody = (TextView) convertView.findViewById(R.id.tvBody);
@@ -60,12 +62,7 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
     }
 
     private void setViewContent(Tweet tweet, TweetViewHolder holder) {
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        holder.ivProfileImage.setImageResource(android.R.color.transparent);
-        imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), holder.ivProfileImage);
-
-        holder.ivCoverImage.setImageResource(android.R.color.transparent);
-        imageLoader.displayImage(tweet.getUser().getCoverImageUrl(), holder.ivCoverImage);
+        setImageViews(tweet, holder);
 
         holder.tvFullName.setText(tweet.getUser().getName());
 
@@ -78,9 +75,27 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
         holder.tvTimestamp.setTextColor(Color.LTGRAY);
     }
 
+    private void setImageViews(Tweet tweet, TweetViewHolder holder) {
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        holder.ivProfileImage.setImageResource(android.R.color.transparent);
+        imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), holder.ivProfileImage);
+
+        holder.ivCoverImage.setImageResource(android.R.color.transparent);
+        imageLoader.displayImage(tweet.getUser().getCoverImageUrl(), holder.ivCoverImage);
+
+        if (tweet.hasMedia()) {
+            holder.ivMedia.setVisibility(View.VISIBLE);
+            holder.ivMedia.setImageResource(android.R.color.transparent);
+            imageLoader.displayImage(tweet.getMediaUrl(), holder.ivMedia);
+        } else {
+            holder.ivMedia.setVisibility(View.GONE);
+        }
+    }
+
     private class TweetViewHolder {
         public ImageView ivCoverImage;
         public ImageView ivProfileImage;
+        public ImageView ivMedia;
         public TextView tvFullName;
         public TextView tvUsername;
         public TextView tvBody;

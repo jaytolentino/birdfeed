@@ -89,7 +89,7 @@
                 android:layout_alignStart="@+id/tvBody"
                 android:layout_alignRight="@+id/tvBody"
                 android:layout_alignEnd="@+id/tvBody"
-                android:layout_below="@+id/tvBody"
+                android:layout_below="@+id/ivMedia"
                 android:paddingBottom="@dimen/padding_small"
                 android:gravity="right|end"
                 android:textSize="@dimen/textsize_small"
@@ -105,6 +105,20 @@
                 android:layout_marginRight="@dimen/padding_small"
                 android:layout_alignTop="@+id/ivProfileImg"
                 android:gravity="top" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ivMedia"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher"
+                android:layout_below="@+id/tvBody"
+                android:layout_alignLeft="@+id/tvBody"
+                android:layout_alignStart="@+id/tvBody"
+                android:layout_alignRight="@+id/tvBody"
+                android:layout_alignEnd="@+id/tvBody"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:layout_marginBottom="@dimen/padding_medium" />
 
         </RelativeLayout>
 

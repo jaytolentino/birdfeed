@@ -25,6 +25,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.commons.collections4.ListUtils;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +55,6 @@ public class FeedActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.feed, menu);
         return true;
-    }
-
-    private void toast() {
-        Toast.makeText(this, "woah", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -145,6 +142,7 @@ public class FeedActivity extends ActionBarActivity {
         lvTweets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
                 Intent tweetDetailView = new Intent(FeedActivity.this, TweetDetailActivity.class);
                 tweetDetailView.putExtra("tweetPosition", position);
                 startActivity(tweetDetailView);
@@ -160,7 +158,8 @@ public class FeedActivity extends ActionBarActivity {
                 refreshFeed();
             }
         });
-        swipeContainer.setColorScheme(android.R.color.holo_blue_bright,
+        swipeContainer.setColorScheme(
+                android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
