@@ -1,5 +1,6 @@
 package com.codepath.apps.birdfeed.activities;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -7,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,7 +32,7 @@ import java.util.List;
 // TODO cleanup feedactivity with fragment(s)
 public class FeedActivity extends ActionBarActivity {
     private TwitterClient client;
-    private ArrayList<Tweet> tweets;
+    private static ArrayList<Tweet> tweets;
     private TweetsAdapter aTweets;
     private ListView lvTweets;
     private String earliestId;
@@ -93,8 +96,6 @@ public class FeedActivity extends ActionBarActivity {
                 aTweets.addAll(Tweet.fromJSONArray(json));
                 earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
                 Log.d("debug", "Finished populating feed");
-
-                Log.d("debug", json.toString());
                 ProgressBarHandler.hideProgressBar(FeedActivity.this);
             }
 
@@ -112,6 +113,7 @@ public class FeedActivity extends ActionBarActivity {
         aTweets = new TweetsAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
         setupTweetScroll();
+        setupTweetClick();
         setupSwipeContainer();
     }
 
@@ -135,6 +137,17 @@ public class FeedActivity extends ActionBarActivity {
                         Log.d("debug", s);
                     }
                 });
+            }
+        });
+    }
+
+    private void setupTweetClick() {
+        lvTweets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent tweetDetailView = new Intent(FeedActivity.this, TweetDetailActivity.class);
+                tweetDetailView.putExtra("tweetPosition", position);
+                startActivity(tweetDetailView);
             }
         });
     }
@@ -174,5 +187,13 @@ public class FeedActivity extends ActionBarActivity {
                 }
             });
         }
+    }
+
+    public static boolean hasTweets() {
+        return tweets != null;
+    }
+
+    public static Tweet getTweet(int position) {
+        return tweets.get(position);
     }
 }

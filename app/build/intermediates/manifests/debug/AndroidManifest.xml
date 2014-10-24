@@ -47,6 +47,10 @@
             android:name="com.codepath.apps.birdfeed.activities.FeedActivity"
             android:label="@string/title_activity_feed" >
         </activity>
+        <activity
+            android:name="com.codepath.apps.birdfeed.activities.TweetDetailActivity"
+            android:label="@string/title_activity_tweet_detail" >
+        </activity>
     </application>
 
 </manifest>

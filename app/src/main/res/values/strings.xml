@@ -15,5 +15,13 @@
     <string name="hint_tweet">What\'s happening?</string>
     <string name="label_counter">140 chars left</string>
     <string name="sample_fullname">Jane Smith</string>
+    <string name="title_activity_tweet_detail">TweetDetailActivity</string>
+    <string name="description_profilePic">User Profile Picture</string>
+    <string name="description_background">Background Image</string>
+    <string name="title_retweet">Retweet</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="placeholder_number">203</string>
+    <string name="title_reply">Reply?</string>
+    <string name="btn_reply">Reply</string>
 
 </resources>

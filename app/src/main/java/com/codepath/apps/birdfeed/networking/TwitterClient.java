@@ -40,6 +40,7 @@ public class TwitterClient extends OAuthBaseClient {
         RequestParams params = new RequestParams();
         params.put("start_id", "1");
 
+
         Log.d("DEBUG", "GET " + apiUrl + ", START_ID: " + 1);
         client.get(apiUrl, params, handler);
     }

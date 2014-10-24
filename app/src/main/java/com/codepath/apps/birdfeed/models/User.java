@@ -1,12 +1,15 @@
 package com.codepath.apps.birdfeed.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
  * Created by jay on 10/17/14.
  */
-public class User {
+public class User implements Parcelable {
     private String name;
     private long uid;
     private String username;
@@ -46,5 +49,19 @@ public class User {
 
     public String getCoverImageUrl() {
         return coverImageUrl;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeLong(uid);
+        parcel.writeString(username);
+        parcel.writeString(profileImageUrl);
+        parcel.writeString(coverImageUrl);
     }
 }

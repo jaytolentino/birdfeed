@@ -47,6 +47,10 @@
             android:name=".activities.FeedActivity"
             android:label="@string/title_activity_feed" >
         </activity>
+        <activity
+            android:name=".activities.TweetDetailActivity"
+            android:label="@string/title_activity_tweet_detail" >
+        </activity>
     </application>
 
 </manifest>
