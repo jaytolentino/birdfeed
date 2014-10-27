@@ -2,6 +2,7 @@ package com.codepath.apps.birdfeed.networking;
 
 import android.content.Context;
 
+import com.activeandroid.ActiveAndroid;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -22,6 +23,7 @@ public class TwitterApplication extends com.activeandroid.app.Application {
 	public void onCreate() {
 		super.onCreate();
 		TwitterApplication.context = this;
+        ActiveAndroid.setLoggingEnabled(true);
 
 		// Create global configuration and initialize ImageLoader with this configuration
 		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder().

@@ -2,19 +2,54 @@ package com.codepath.apps.birdfeed.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
+
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 /**
  * Created by jay on 10/17/14.
  */
-public class User implements Parcelable {
+@Table(name = "User")
+public class User extends Model implements Parcelable {
+    @Column(name = "remote_id", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
+    public long remoteId;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "uid")
     private long uid;
+
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "profile_image_url")
     private String profileImageUrl;
+
+    @Column(name = "cover_image_url")
     private String coverImageUrl;
+
+    public User() {
+        super();
+    }
+
+    public User(String name, long uid, String username, String profileImageUrl, String coverImageUrl) {
+        super();
+        this.name = name;
+        this.uid = uid;
+        this.username = username;
+        this.profileImageUrl = profileImageUrl;
+        this.coverImageUrl = coverImageUrl;
+        this.save();
+    }
 
     public static User fromJSON(JSONObject jsonObject) {
         User user = new User();
@@ -24,6 +59,8 @@ public class User implements Parcelable {
             user.username = jsonObject.getString("screen_name");
             user.profileImageUrl = jsonObject.getString("profile_image_url");
             user.coverImageUrl = jsonObject.getString("profile_background_image_url");
+            user.save();
+            Log.d("debug", "Saved user " + user.uid);
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -63,5 +100,11 @@ public class User implements Parcelable {
         parcel.writeString(username);
         parcel.writeString(profileImageUrl);
         parcel.writeString(coverImageUrl);
+    }
+
+    public static List<User> getAll() {
+        return new Select()
+                .from(User.class)
+                .execute();
     }
 }

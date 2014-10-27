@@ -4,6 +4,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
+import com.activeandroid.ActiveAndroid;
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 import com.codepath.apps.birdfeed.utils.TimestampParser;
 
 import org.json.JSONArray;
@@ -19,18 +24,46 @@ import java.util.List;
 /**
  * Created by jay on 10/17/14.
  */
-public class Tweet implements Serializable {
+@Table(name = "tweets")
+public class Tweet extends Model implements Serializable {
+    @Column(name = "remote_id", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
+    public long remoteId;
+
+    @Column(name = "body")
     private String body;
+
+    @Column(name = "tweet_id")
     private long tweetId;
+
+    @Column(name = "created_at")
     private String createdAt;
+
+    @Column(name = "user", onUpdate = Column.ForeignKeyAction.CASCADE, onDelete = Column.ForeignKeyAction.CASCADE)
     private User user;
+
+    @Column(name = "retweet_count")
     private String retweetCount;
+
+    @Column(name = "favorite_count")
     private String favoriteCount;
+
+    @Column(name = "media_url")
     private String mediaUrl;
 
 
     public Tweet() {
+        super();
+    }
 
+    public Tweet(String body, long tweetId, String createdAt, User user, String retweetCount, String favoriteCount) {
+        super();
+        this.body = body;
+        this.tweetId = tweetId;
+        this.createdAt = createdAt;
+        this.user = user;
+        this.retweetCount = retweetCount;
+        this.favoriteCount = favoriteCount;
+        this.save();
     }
 
     public static Tweet fromJSON(JSONObject jsonObject) {
@@ -48,6 +81,8 @@ public class Tweet implements Serializable {
             } else {
                 tweet.mediaUrl = null;
             }
+            tweet.save();
+            Log.d("debug", "Saved tweet " + tweet.tweetId);
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -60,20 +95,27 @@ public class Tweet implements Serializable {
     public static ArrayList<Tweet> fromJSONArray(JSONArray jsonArray) {
         ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject tweetJson = null;
-            try {
-                tweetJson = jsonArray.getJSONObject(i);
-            }
-            catch (JSONException e) {
-                e.printStackTrace();
-                continue;
-            }
-            Tweet tweet = Tweet.fromJSON(tweetJson);
-            if (tweet != null) {
-                tweets.add(tweet);
+        ActiveAndroid.beginTransaction();
+        try {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject tweetJson = null;
+                try {
+                    tweetJson = jsonArray.getJSONObject(i);
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                    continue;
+                }
+                Tweet tweet = Tweet.fromJSON(tweetJson);
+                if (tweet != null) {
+                    tweets.add(tweet);
+                }
             }
         }
+        finally {
+            ActiveAndroid.endTransaction();
+        }
+
 
         return tweets;
     }
@@ -126,5 +168,11 @@ public class Tweet implements Serializable {
             e.printStackTrace();
             mediaUrl = null;
         }
+    }
+
+    public static List<Tweet> getAll() {
+        return new Select()
+                .from(Tweet.class)
+                .execute();
     }
 }

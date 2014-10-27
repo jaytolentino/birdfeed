@@ -4,7 +4,6 @@ package com.codepath.apps.birdfeed.activities;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,13 +12,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import com.codepath.apps.birdfeed.R;
 import com.codepath.apps.birdfeed.adapters.EndlessScrollListener;
 import com.codepath.apps.birdfeed.adapters.TweetsAdapter;
 import com.codepath.apps.birdfeed.fragments.ComposeTweetFragment;
 import com.codepath.apps.birdfeed.models.Tweet;
+import com.codepath.apps.birdfeed.models.User;
 import com.codepath.apps.birdfeed.networking.TwitterApplication;
 import com.codepath.apps.birdfeed.networking.TwitterClient;
 import com.codepath.apps.birdfeed.utils.ProgressBarHandler;
@@ -27,7 +25,6 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.commons.collections4.ListUtils;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +87,11 @@ public class FeedActivity extends ActionBarActivity {
     private void populateTimeline() {
         ProgressBarHandler.showProgressBar(this);
         Log.d("debug", "Began populating feed");
+        List<Tweet> testTweetList = Tweet.getAll();
+        Log.d("debug", "Tweet Query Result: " + testTweetList.size());
+        List<User> testUserList = User.getAll();
+        Log.d("debug", "User Query Result: " + testUserList.size());
+
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray json) {
@@ -170,6 +172,9 @@ public class FeedActivity extends ActionBarActivity {
 
     private void refreshFeed() {
         if (!aTweets.isEmpty()) {
+            List<Tweet> testList = Tweet.getAll();
+            Log.d("debug", "Query Result: " + testList.size());
+
             String mostRecentId = String.valueOf(aTweets.getItem(0).getTweetId());
             Log.d("debug", "Began refreshing feed");
             client.getNewTimelineItems(mostRecentId, new JsonHttpResponseHandler() {
