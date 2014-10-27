@@ -50,7 +50,7 @@
             android:layout_below="@+id/tvDetailName"
             android:layout_alignLeft="@+id/tvDetailName"
             android:layout_alignStart="@+id/tvDetailName"
-            android:textColor="@color/gray_font" />
+            android:textColor="@color/twitter_gray" />
     </RelativeLayout>
 
     <ImageView
@@ -110,7 +110,7 @@
                 android:layout_alignRight="@+id/tvDetailTweet"
                 android:layout_alignEnd="@+id/tvDetailTweet"
                 android:layout_marginTop="@dimen/padding_medium"
-                android:textColor="@color/gray_font" />
+                android:textColor="@color/twitter_gray" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -146,7 +146,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="@dimen/texsize_medium" />
+            android:layout_marginRight="@dimen/texsize_medium"
+            android:textColor="@color/twitter_gray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -158,7 +159,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/tvTitleRetweet"
-            android:layout_alignEnd="@+id/tvTitleRetweet" />
+            android:layout_alignEnd="@+id/tvTitleRetweet"
+            android:textColor="@color/twitter_blue" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -171,7 +173,8 @@
             android:layout_alignStart="@+id/textView3"
             android:layout_below="@+id/textView3"
             android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3" />
+            android:layout_alignEnd="@+id/textView3"
+            android:textColor="@color/twitter_blue" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -181,7 +184,8 @@
             android:layout_toEndOf="@+id/tvTitleRetweet"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tvTitleRetweet"
-            android:layout_marginRight="@dimen/padding_medium" />
+            android:layout_marginRight="@dimen/padding_medium"
+            android:textColor="@color/twitter_gray" />
 
         <Button
             android:layout_width="wrap_content"
@@ -193,7 +197,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textView3"
-            android:onClick="onReply" />
+            android:onClick="onReply"
+            android:background="@color/twitter_blue"
+            android:textColor="@color/twitter_white" />
 
     </RelativeLayout>
 

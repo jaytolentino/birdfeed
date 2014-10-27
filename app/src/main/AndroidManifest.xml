@@ -16,7 +16,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:theme="@style/TwitterTheme" >
         <meta-data
             android:name="AA_DB_NAME"
             android:value="RestClient.db" />
@@ -45,11 +45,11 @@
         </activity>
         <activity
             android:name=".activities.FeedActivity"
-            android:label="@string/title_activity_feed" >
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".activities.TweetDetailActivity"
-            android:label="@string/title_activity_tweet_detail" >
+            android:label="@string/app_name" >
         </activity>
     </application>
 

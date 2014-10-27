@@ -1,8 +1,10 @@
 package com.codepath.apps.birdfeed.activities;
 
+
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +46,7 @@ public class FeedActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         ProgressBarHandler.create(this);
         setContentView(R.layout.activity_feed);
+
         client = TwitterApplication.getRestClient();
 
         initializeMemberVariables();
