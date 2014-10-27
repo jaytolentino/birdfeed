@@ -86,11 +86,7 @@ public class FeedActivity extends ActionBarActivity {
 
     private void populateTimeline() {
         ProgressBarHandler.showProgressBar(this);
-        Log.d("debug", "Began populating feed");
-        List<Tweet> testTweetList = Tweet.getAll();
-        Log.d("debug", "Tweet Query Result: " + testTweetList.size());
-        List<User> testUserList = User.getAll();
-        Log.d("debug", "User Query Result: " + testUserList.size());
+        checkSavedTweets();
 
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
@@ -172,9 +168,6 @@ public class FeedActivity extends ActionBarActivity {
 
     private void refreshFeed() {
         if (!aTweets.isEmpty()) {
-            List<Tweet> testList = Tweet.getAll();
-            Log.d("debug", "Query Result: " + testList.size());
-
             String mostRecentId = String.valueOf(aTweets.getItem(0).getTweetId());
             Log.d("debug", "Began refreshing feed");
             client.getNewTimelineItems(mostRecentId, new JsonHttpResponseHandler() {
@@ -202,5 +195,20 @@ public class FeedActivity extends ActionBarActivity {
 
     public static Tweet getTweet(int position) {
         return tweets.get(position);
+    }
+
+    private void checkSavedTweets() {
+        Thread dbThread = new Thread() {
+            @Override
+            public void run() {
+                List<Tweet> savedTweets = Tweet.getAll();
+                if (!savedTweets.isEmpty()) {
+                    aTweets.addAll(savedTweets);
+                    earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
+                    Log.d("debug", "Added " + savedTweets.size() + " saved tweets");
+                }
+            }
+        };
+        dbThread.start();
     }
 }

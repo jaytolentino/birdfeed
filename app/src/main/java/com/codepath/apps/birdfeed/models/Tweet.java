@@ -50,7 +50,6 @@ public class Tweet extends Model implements Serializable {
     @Column(name = "media_url")
     private String mediaUrl;
 
-
     public Tweet() {
         super();
     }
@@ -81,8 +80,8 @@ public class Tweet extends Model implements Serializable {
             } else {
                 tweet.mediaUrl = null;
             }
-            tweet.save();
-            Log.d("debug", "Saved tweet " + tweet.tweetId);
+            long result = tweet.save();
+            Log.d("debug", "Saved tweet " + tweet.tweetId + " with mId: " + result);
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -111,6 +110,7 @@ public class Tweet extends Model implements Serializable {
                     tweets.add(tweet);
                 }
             }
+            ActiveAndroid.setTransactionSuccessful();
         }
         finally {
             ActiveAndroid.endTransaction();
@@ -173,6 +173,7 @@ public class Tweet extends Model implements Serializable {
     public static List<Tweet> getAll() {
         return new Select()
                 .from(Tweet.class)
+                .limit(20)
                 .execute();
     }
 }
