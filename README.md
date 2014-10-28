@@ -4,8 +4,6 @@ A Twitter Client Android App
 
 ## User Stories
 
-### Completed...
-
 __Required:__
 * User can sign in to Twitter using OAuth login
 * User can view the tweets from their home timeline
@@ -28,3 +26,5 @@ _Optional:_
 * Advanced: Improve the user interface and theme the app to feel "twitter branded"
 * Bonus: Compose activity is replaced with a modal overlay
 * Bonus: User can see embedded image media within the tweet detail view
+
+<img src="/gif/birdfeed_all.gif" width="300"/>

@@ -47,6 +47,7 @@ public class FeedActivity extends ActionBarActivity {
         client = TwitterApplication.getRestClient();
 
         initializeMemberVariables();
+        checkSavedTweets();
         populateTimeline();
     }
 
@@ -86,8 +87,6 @@ public class FeedActivity extends ActionBarActivity {
 
     private void populateTimeline() {
         ProgressBarHandler.showProgressBar(this);
-        checkSavedTweets();
-
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray json) {
