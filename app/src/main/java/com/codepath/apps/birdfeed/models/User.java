@@ -19,13 +19,10 @@ import java.util.List;
  */
 @Table(name = "User")
 public class User extends Model implements Parcelable {
-    @Column(name = "remote_id", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
-    public long remoteId;
-
     @Column(name = "name")
     private String name;
 
-    @Column(name = "uid")
+    @Column(name = "uid", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
     private long uid;
 
     @Column(name = "username")

@@ -47,7 +47,12 @@ public class FeedActivity extends ActionBarActivity {
         client = TwitterApplication.getRestClient();
 
         initializeMemberVariables();
-        checkSavedTweets();
+        List<Tweet> savedTweets = Tweet.getAll();
+        if (!savedTweets.isEmpty()) {
+            aTweets.addAll(savedTweets);
+            earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
+            Log.d("debug", "Added " + savedTweets.size() + " saved tweets");
+        }
         populateTimeline();
     }
 
@@ -194,20 +199,5 @@ public class FeedActivity extends ActionBarActivity {
 
     public static Tweet getTweet(int position) {
         return tweets.get(position);
-    }
-
-    private void checkSavedTweets() {
-        Thread dbThread = new Thread() {
-            @Override
-            public void run() {
-                List<Tweet> savedTweets = Tweet.getAll();
-                if (!savedTweets.isEmpty()) {
-                    aTweets.addAll(savedTweets);
-                    earliestId = String.valueOf(aTweets.getItem(tweets.size() - 1).getTweetId());
-                    Log.d("debug", "Added " + savedTweets.size() + " saved tweets");
-                }
-            }
-        };
-        dbThread.start();
     }
 }

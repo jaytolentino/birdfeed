@@ -26,13 +26,11 @@ import java.util.List;
  */
 @Table(name = "tweets")
 public class Tweet extends Model implements Serializable {
-    @Column(name = "remote_id", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
-    public long remoteId;
 
     @Column(name = "body")
     private String body;
 
-    @Column(name = "tweet_id")
+    @Column(name = "tweet_id", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
     private long tweetId;
 
     @Column(name = "created_at")
